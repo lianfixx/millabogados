@@ -1,0 +1,53 @@
+{
+  "source_file": "MILLA ABOGADOS | Estrategia jurídica con claridad y visión.html",
+  "production_origin": "https://millabogados.com",
+  "asset_references": [
+    "/apple-touch-icon.png",
+    "/assets/HeroSculpture-rLzG0fzq.js",
+    "/assets/LegalInbox-DR--djHu.js",
+    "/assets/SiteHeader-C_IG9VCj.js",
+    "/assets/VirtualAdvisory-D8GYYdsw.js",
+    "/assets/attribution-5rtX23Ft.js",
+    "/assets/framework-CXnKph_e.js",
+    "/assets/index-BXG6jSgW.css",
+    "/assets/index-Bn_N9tYX.js",
+    "/assets/layout-segment-context-cAeqE9uE.js",
+    "/assets/link-D5-hNvNI.js",
+    "/assets/rolldown-runtime-S-ySWqyJ.js",
+    "/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+    "/favicon-16x16.png",
+    "/favicon-32x32.png",
+    "/favicon.ico",
+    "/fonts/cormorant-garamond-400.woff2",
+    "/fonts/manrope-400.woff2",
+    "/milla-logo-transparent.png",
+    "/site.webmanifest",
+    "https://millabogados.com/milla-logo-transparent.png"
+  ],
+  "internal_routes": [
+    "/#asesoria-virtual",
+    "/#contacto",
+    "/#diferenciadores",
+    "/#equipo",
+    "/#firma",
+    "/#inicio",
+    "/#servicios",
+    "/admin",
+    "/aviso-de-privacidad",
+    "/servicios/amparo",
+    "/servicios/civil-familiar",
+    "/servicios/corporativo",
+    "/servicios/fiscal",
+    "/servicios/laboral-mercantil"
+  ],
+  "external_links": [
+    "https://wa.me/525561490498",
+    "https://www.instagram.com/millabogados/",
+    "https://www.linkedin.com/company/millabogados/"
+  ],
+  "notes": [
+    "El HTML es la salida pública renderizada, no el repositorio privado de ChatGPT Sites.",
+    "Los bundles de CSS y JS de producción permanecen referenciados desde millabogados.com en public/index.html.",
+    "El código del servidor, esquemas de BD, secretos de API y configuración de despliegue no pueden recuperarse desde un snapshot del navegador."
+  ]
+}
