@@ -1,100 +1,119 @@
 # MILLA ABOGADOS
 
-Sitio web oficial de [millabogados.com](https://millabogados.com) — Firma jurídica boutique en Ciudad de México y Estado de México.
+> **🌐 [millabogados.com](https://millabogados.com)** — Firma jurídica boutique en Ciudad de México y Estado de México.
 
-> ⚠️ **Aviso importante:** Este repositorio contiene información institucional pública. Las claves de API, secretos de servidor y configuraciones de backend NO están incluidas porque no forman parte del HTML público. Consulta la sección [Seguridad](#seguridad-y-configuración) para más información.
+Repositorio completo del sitio web. Preparado para que **cualquier IA** (Claude, Codex, Cursor, Copilot) pueda retomar el desarrollo. Lee [`CLAUDE_GUIDE.md`](CLAUDE_GUIDE.md) si vienes de Claude o Anthropic.
 
-## Sobre el proyecto
+---
 
-Sitio web premium con diseño editorial, animaciones fluidas y escultura 3D interactiva. Construido con tecnologías web estándar para máximo rendimiento y portabilidad.
+## 🚀 Arranque rápido
 
-### Características
+```bash
+npm run dev        # Servidor en http://127.0.0.1:4173
+```
 
-- **Diseño editorial premium** — glassmorphism, tipografía Cormorant Garamond + Manrope
-- **Escultura 3D interactiva** — Three.js con fallback SVG
-- **Animaciones fluidas** — scroll reveal, parallax, ripple effects, counter animations
-- **Navegación accesible** — ARIA labels, skip links, keyboard navigation, reduced motion
-- **SEO completo** — Schema.org structured data, Open Graph, Twitter Cards, meta tags
-- **Formulario "Buzón Jurídico"** — validación client-side, honeypot anti-spam
-- **Servidor Node.js** — headers de seguridad (CSP, HSTS, X-Frame-Options), compresión gzip
+Sin dependencias — solo Node.js nativo.
 
-## Estructura del proyecto
+---
+
+## 📁 Estructura completa
 
 ```
 millabogados/
-├── index.html              # Página principal (single-page)
-├── styles.css              # CSS premium (glassmorphism, animaciones)
-├── app.js                  # Motor de animaciones y lógica frontend
-├── sculpture3d.js          # Escultura 3D con Three.js + fallback SVG
-├── server.mjs              # Servidor Node.js producción (security headers)
-├── server-root.mjs         # Servidor alternativo (delega a editable/)
+├── index.html              # Página principal (~22KB, single-page)
+├── styles.css              # CSS premium (glassmorphism, animaciones, responsive)
+├── app.js                  # Motor de animaciones (scroll reveal, parallax, menú, formulario)
+├── sculpture3d.js          # Escultura 3D Three.js con fallback SVG
+├── server.mjs              # Servidor Node.js producción (CSP, HSTS, gzip)
+├── server-root.mjs         # Servidor alternativo
 ├── package.json            # Configuración npm
-├── assets/                 # Recursos gráficos (logo, favicon)
-├── premium-version/        # Versión HTML estática premium (GSAP + Three.js)
-├── original-source/        # HTML fuente original y archivos públicos
-├── docs/                   # Documentación, prompts y manifiestos
-└── redesign-version/       # Versión React + Vite (para referencia futura)
+├── CLAUDE_GUIDE.md         # 🔑 Guía completa para Claude y otras IAs
+├── README.md               # Este archivo
+├── .gitignore
+│
+├── assets/
+│   ├── milla-mark.svg      # Logo local de referencia
+│   └── README.md           # Nota sobre el logo oficial
+│
+├── docs/
+│   ├── ANTIGRAVITY_PROMPT.md    # Prompt original de reconstrucción
+│   ├── PROJECT_CONTEXT.md       # Contexto de recuperación del sitio
+│   ├── asset-manifest.json      # Referencias de assets y rutas
+│   └── LICENSE_NOTICE.md        # Aviso de propiedad intelectual
+│
+├── premium-version/        # Versión HTML estática premium (GSAP + Three.js CDN)
+│   ├── index.html
+│   ├── css/style.css
+│   └── js/
+│
+├── original-source/        # HTML fuente original extraído del navegador
+│   ├── index.html          # ~68KB, la versión pública exacta
+│   ├── custom.css
+│   └── custom.js
+│
+└── redesign-version/       # Placeholder para futura versión React + Vite
 ```
 
-## Desarrollo local
+---
 
-```bash
-# Instalar dependencias (solo Node.js nativo, sin paquetes externos)
-npm install
+## 🎨 Diseño
 
-# Iniciar servidor de desarrollo
-npm run dev
-```
-
-El servidor inicia en `http://127.0.0.1:4173` con:
-- Content Security Policy (CSP)
-- HTTP Strict Transport Security (HSTS)
-- X-Frame-Options, X-Content-Type-Options
-- Compresión gzip/deflate
-- Cache inteligente por tipo de archivo
-
-## Despliegue
-
-Este sitio es completamente estático (HTML + CSS + JS) y puede desplegarse en:
-
-| Plataforma | Instrucciones |
+| Elemento | Valor |
 |---|---|
-| **Cloudflare Pages** | Conecta este repositorio. Build command: _none_. Output directory: `/` |
-| **Vercel** | Conecta este repositorio. Framework: _Other_. |
-| **Netlify** | Arrastra la carpeta o conecta el repo. |
-| **GitHub Pages** | Settings → Pages → Source: main branch |
-| **Cualquier hosting** | Sirve los archivos estáticos con un servidor web |
+| **Tipografía** | Cormorant Garamond (serif) + Manrope (sans) |
+| **Paleta** | Navy #1f2a37, Ivory #fffdf7, Gold #c5942e |
+| **Efectos** | Glassmorphism, parallax, scroll reveal, cursor glow, ripple |
+| **3D** | Escultura geométrica Three.js con reflejos PBR, partículas doradas |
+| **Accesibilidad** | ARIA labels, skip links, keyboard nav, reduced motion, contraste |
 
-## Tecnologías
+---
 
-- **HTML5 semántico** con ARIA
-- **CSS3**: Custom Properties, Grid, Flexbox, glassmorphism, animaciones
-- **JavaScript vanilla** (ES Modules): Intersection Observer, Scroll, Form handling
-- **Three.js** (CDN): Escultura 3D con materiales PBR y WebGL
-- **Node.js**: Servidor HTTP nativo con security headers
-- **Schema.org**: Datos estructurados para SEO
+## 🔌 Integraciones (qué conectar)
 
-## Seguridad y configuración
+El sitio funciona completo como estático. Las siguientes integraciones requieren configuración adicional:
 
-### Lo que SÍ está en este repositorio
-- Todo el código fuente del frontend
-- Servidor de desarrollo local
-- Políticas de seguridad (CSP, HSTS)
-- Estructura completa del sitio
+| Componente | Archivo | Estado | Acción necesaria |
+|---|---|---|---|
+| **Formulario (Buzón Jurídico)** | `index.html` (`.legal-inbox`) | Validación client-side lista | Conectar `action` a endpoint backend |
+| **Cloudflare Turnstile** | `index.html` | Placeholder | Registrarse en Cloudflare → site key + secret key |
+| **Calendario** | `index.html` (`#asesoria-virtual`) | Placeholder | Google Calendar / Calendly / endpoint propio |
+| **Logo oficial** | `assets/milla-mark.svg` | SVG referencia | Reemplazar con logo real de millabogados.com |
+| **WhatsApp** | `index.html` | Link directo listo | Número configurado: +52 55 6149 0498 |
+| **Email** | `index.html` | Links mailto listos | socios@millabogados.com |
 
-### Lo que NO está (y nunca debería estar)
-- Claves secretas de Cloudflare Turnstile
-- Tokens de API
-- Configuraciones de backend
-- Credenciales de bases de datos
-- Secrets de despliegue
+---
 
-### Si necesitas reconstruir integraciones:
-1. **Cloudflare Turnstile**: Regístrate en Cloudflare, obtén site key + secret key
-2. **Formulario de contacto**: Conecta el endpoint del Buzón Jurídico a tu backend
-3. **Calendario**: Integra Google Calendar, Calendly o tu propio endpoint
-4. **Variables de entorno**: Crea un `.env` (no se commitea) con tus claves
+## 🚢 Despliegue
 
-## Aviso legal
+| Plataforma | Cómo |
+|---|---|
+| **Cloudflare Pages** ⭐ | Conecta repo → sin build → output `/` |
+| **Vercel** | Conecta repo → Framework: Other |
+| **Netlify** | Conecta repo o arrastra carpeta |
+| **GitHub Pages** | Settings → Pages → main branch |
 
-© 2026 MILLA ABOGADOS. El contenido de este sitio es informativo y no constituye asesoría jurídica. La prestación de servicios comienza únicamente mediante la aceptación formal del asunto y la documentación correspondiente. No se garantizan resultados.
+---
+
+## ⚠️ Seguridad
+
+Este repositorio contiene **código público del frontend**. No incluye ni debe incluir:
+- ❌ Claves secretas de API
+- ❌ Tokens de acceso
+- ❌ Contraseñas de bases de datos
+- ❌ Secretos de Cloudflare Turnstile
+
+Las claves públicas visibles en el HTML (site key de Turnstile, número de WhatsApp, email) son datos públicos por diseño.
+
+---
+
+## 🤖 Para otras IAs
+
+Si otra IA va a trabajar con este proyecto, indícale que lea primero **`CLAUDE_GUIDE.md`**. Contiene:
+- Explicación de cada archivo y su propósito
+- Instrucciones de desarrollo y despliegue
+- Paleta de colores y tipografía oficial
+- Qué está completo y qué falta conectar
+
+---
+
+© 2026 MILLA ABOGADOS. Contenido informativo. No constituye asesoría jurídica.
