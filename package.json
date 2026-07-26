@@ -1,0 +1,16 @@
+{
+  "name": "millabogados",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de MILLA ABOGADOS — Firma jurídica boutique en Ciudad de México y Estado de México",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "preview": "node server-root.mjs"
+  },
+  "keywords": ["law-firm", "legal", "mexico", "boutique"],
+  "author": "MILLA ABOGADOS",
+  "license": "UNLICENSED",
+  "private": true
+}
