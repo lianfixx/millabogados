@@ -1,0 +1,4 @@
+/* Custom CSS overrides for MILLA ABOGADOS public version */
+:root { --navy: #1f2a37; --gold: #c5942e; --ivory: #fffdf7; }
+body { font-family: Manrope, sans-serif; }
+.site-header { position: fixed; top: 0; width: 100%; z-index: 100; }
